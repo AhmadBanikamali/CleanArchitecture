@@ -1,6 +1,6 @@
 buildscript {
     extra.apply {
-        set("compose_version", "1.1.1")
+        set("compose_version", "1.2.0-beta01")
     }
 
     dependencies {
@@ -10,8 +10,8 @@ buildscript {
 plugins {
     id ("com.android.application") version "7.2.0" apply false
     id ("com.android.library") version "7.2.0" apply false
-    id ("org.jetbrains.kotlin.android") version "1.6.21" apply false
-    id ("org.jetbrains.kotlin.jvm") version "1.6.21" apply false
+    id ("org.jetbrains.kotlin.android") version "1.6.10" apply false
+    id ("org.jetbrains.kotlin.jvm") version "1.6.10" apply false
 }
 
 

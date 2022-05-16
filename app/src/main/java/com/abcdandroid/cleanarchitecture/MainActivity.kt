@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.abcdandroid.cleanarchitecture.ui.theme.CleanArchitectureTheme
+import com.abcdandroid.core_ui.LocalSpacing
+import com.abcdandroid.onboarding_presentation.welcome.WelcomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +20,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CleanArchitectureTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                Surface(color = MaterialTheme.colors.background,
+                    modifier = Modifier.fillMaxSize()) {
+                    WelcomeScreen()
                 }
             }
         }
