@@ -1,4 +1,4 @@
-package com.abcdandroid.cleanarchitecture
+package com.abcdandroid.core
 
 import org.junit.Test
 
