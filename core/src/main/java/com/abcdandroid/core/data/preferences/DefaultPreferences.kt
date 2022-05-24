@@ -6,8 +6,11 @@ import com.abcdandroid.core.domain.model.Gender
 import com.abcdandroid.core.domain.model.GoalType
 import com.abcdandroid.core.domain.model.UserInfo
 import com.abcdandroid.core.domain.preferences.Preferences
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class DefaultPreferences(
+@Singleton
+class DefaultPreferences @Inject constructor(
     private val sharedPref: SharedPreferences
 ): Preferences {
     override fun saveGender(gender: Gender) {
@@ -69,8 +72,7 @@ class DefaultPreferences(
         val height = sharedPref.getInt(Preferences.KEY_HEIGHT, -1)
         val weight = sharedPref.getFloat(Preferences.KEY_WEIGHT, -1f)
         val genderString = sharedPref.getString(Preferences.KEY_GENDER, null)
-        val activityLevelString = sharedPref
-            .getString(Preferences.KEY_ACTIVITY_LEVEL, null)
+        val activityLevelString = sharedPref.getString(Preferences.KEY_ACTIVITY_LEVEL, null)
         val goalType = sharedPref.getString(Preferences.KEY_GOAL_TYPE, null)
         val carbRatio = sharedPref.getFloat(Preferences.KEY_CARB_RATIO, -1f)
         val proteinRatio = sharedPref.getFloat(Preferences.KEY_PROTEIN_RATIO, -1f)

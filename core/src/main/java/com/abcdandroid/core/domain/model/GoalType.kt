@@ -5,6 +5,10 @@ sealed class GoalType(val name: String) {
     object KeepWeight: GoalType("keep_weight")
     object GainWeight: GoalType("gain_weight")
 
+    fun isSelected(goalType: GoalType): Boolean {
+        return this==goalType
+    }
+
     companion object {
         fun fromString(name: String): GoalType {
             return when(name) {

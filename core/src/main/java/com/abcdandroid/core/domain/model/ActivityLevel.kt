@@ -5,6 +5,10 @@ sealed class ActivityLevel(val name: String) {
     object Medium: ActivityLevel("medium")
     object High: ActivityLevel("high")
 
+    fun isSelected(activityLevel: ActivityLevel): Boolean {
+        return this==activityLevel
+    }
+
     companion object {
         fun fromString(name: String): ActivityLevel {
             return when(name) {
