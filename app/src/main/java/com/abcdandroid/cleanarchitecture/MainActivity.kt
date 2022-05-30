@@ -7,7 +7,6 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.abcdandroid.cleanarchitecture.navigation.navigate
 import com.abcdandroid.cleanarchitecture.ui.theme.CleanArchitectureTheme
@@ -17,6 +16,7 @@ import com.abcdandroid.onboarding_presentation.age.AgeScreen
 import com.abcdandroid.onboarding_presentation.gender.GenderScreen
 import com.abcdandroid.onboarding_presentation.goal.GoalTypeScreen
 import com.abcdandroid.onboarding_presentation.height.HeightScreen
+import com.abcdandroid.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import com.abcdandroid.onboarding_presentation.welcome.WelcomeScreen
 import com.abcdandroid.onboarding_presentation.wieght.WeightScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -49,7 +49,9 @@ class MainActivity : ComponentActivity() {
                         composable(route = Route.WEIGHT) {
                             WeightScreen(navigate = navController::navigate, scaffoldState)
                         }
-                        composable(route = Route.NUTRIENT_GOAL) {}
+                        composable(route = Route.NUTRIENT_GOAL) {
+                            NutrientGoalScreen(scaffoldState = scaffoldState, navigate = navController::navigate)
+                        }
                         composable(route = Route.ACTIVITY) {
                             ActivityLevelScreen(navigate = navController::navigate)
                         }
